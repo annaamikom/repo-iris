@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 def train():
     # 1. Setup MLflow
-    mlflow.set_experiment("Eksperimen RF Iris")
+    mlflow.set_experiment("Eksperimen RF Iris 2")
     mlflow.sklearn.autolog()
 
     # 2. Load Data Training (Hasil dari stage prepare)
@@ -38,7 +38,7 @@ def train():
     pipeline = Pipeline([
         ('scaler', MinMaxScaler(feature_range=(0, 1))),
         ('features', combined_features),
-        ('forest', RandomForestClassifier(n_estimators=5, random_state=42))
+        ('forest', RandomForestClassifier(n_estimators=7, random_state=42))
     ])
 
     # 4. Proses Pelatihan
