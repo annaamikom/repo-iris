@@ -38,7 +38,7 @@ def train():
     pipeline = Pipeline([
         ('scaler', MinMaxScaler(feature_range=(0, 1))),
         ('features', combined_features),
-        ('forest', RandomForestClassifier(n_estimators=10, random_state=42))
+        ('forest', RandomForestClassifier(n_estimators=5, random_state=42))
     ])
 
     # 4. Proses Pelatihan
