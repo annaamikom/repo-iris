@@ -7,7 +7,26 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.ensemble import RandomForestClassifier
+from dotenv import load_dotenv
+import os
+from dotenv import load_dotenv
+import os
+#setting dagshub
+import dagshub
+import mlflow
 
+# load env
+load_dotenv()
+
+# (opsional) cek
+print(os.getenv("MLFLOW_TRACKING_USERNAME"))
+
+#  init dagshub (auto pakai env)
+dagshub.init(
+    repo_name="iris",
+    repo_owner="anna352",
+    mlflow=True
+)
 def train():
     # 1. Setup MLflow
     mlflow.set_experiment("Eksperimen RF Iris 2")
